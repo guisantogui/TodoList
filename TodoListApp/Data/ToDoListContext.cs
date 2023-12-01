@@ -11,7 +11,14 @@ namespace TodoListApp.Data
             
         }
 
-        public DbSet<ToDoItem> ToDoItemContext { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+
+        }
+
+        public DbSet<ToDoItem> ToDoItem { get; set; }
 
     }
 }

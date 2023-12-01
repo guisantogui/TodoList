@@ -4,7 +4,10 @@ namespace TodoListApp.Services
 {
     public interface IToDoListService
     {
-        List<ToDoItem> GetAll();
+        Task<List<ToDoItem>> GetAll();
+
+        Task<ToDoItem[]> GetItems(DateTime startDate);
+
 
     }
 }

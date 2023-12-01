@@ -4,7 +4,7 @@
 
 @using TodoListApp.Services
 @using TodoListApp.Data.Entity
-@inject ToDoListService ToDoService
+@inject IToDoListService ToDoService
 
 <h1>Weather forecast</h1>
 
@@ -40,6 +40,8 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        var a = await ToDoService.GetAll();
+
         items = await ToDoService.GetItems(DateTime.Now);
     }
 }

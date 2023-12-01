@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoListApp.Data.Entity
 {
+    [Table("ToDoItem")]
     public class ToDoItem
     {
 
@@ -11,6 +13,9 @@ namespace TodoListApp.Data.Entity
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
+
+
+
 
     }
 }

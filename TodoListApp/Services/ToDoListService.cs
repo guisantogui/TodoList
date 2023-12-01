@@ -1,18 +1,31 @@
+using Microsoft.EntityFrameworkCore;
+using TodoListApp.Data;
 using TodoListApp.Data.Entity;
 
 namespace TodoListApp.Services
 {
     public class ToDoListService: IToDoListService
     {
+
+        private readonly ToDoListContext _context;
+
+        public ToDoListService(ToDoListContext context)
+        {
+            _context = context;
+        }
+
+
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        public List<ToDoItem> GetAll()
+        public Task<List<ToDoItem>> GetAll()
         {
-            throw new NotImplementedException();
+            return Task.FromResult(_context.ToDoItem.ToList());
         }
+
 
         public Task<ToDoItem[]> GetItems(DateTime startDate)
         {
