@@ -15,7 +15,6 @@ namespace TodoListApp.Data
         {
             base.OnModelCreating(modelBuilder);
 
-
         }
 
         public DbSet<ToDoItem> ToDoItem { get; set; }

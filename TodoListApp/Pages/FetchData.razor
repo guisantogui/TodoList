@@ -6,13 +6,13 @@
 @using TodoListApp.Data.Entity
 @inject IToDoListService ToDoService
 
-<h1>Weather forecast</h1>
+<h1>TODO'S</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<p>ToDo List, do it!</p>
 
 @if (items == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Null???</em></p>
 }
 else
 {
@@ -36,12 +36,12 @@ else
 }
 
 @code {
-    private ToDoItem[]? items;
+    private List<ToDoItem> items;
 
     protected override async Task OnInitializedAsync()
     {
-        var a = await ToDoService.GetAll();
+        items = await ToDoService.GetAll();
 
-        items = await ToDoService.GetItems(DateTime.Now);
+       //  items = await ToDoService.GetItems(DateTime.Now);
     }
 }
