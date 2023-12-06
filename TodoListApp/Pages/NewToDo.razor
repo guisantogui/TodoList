@@ -1,0 +1,43 @@
+﻿@page "/newtodo"
+
+
+@using TodoListApp.Services
+@using TodoListApp.Data.Entity
+@inject IToDoListService ToDoService
+
+
+
+<h3>New ToDo</h3>
+
+
+
+<EditForm Model="ToDoItem" OnSubmit="Submit">
+
+    <div class="form-group m-3">
+        <label>Title: </label>
+        <InputText id="todo-title" @bind-Value="ToDoItem.Title"></InputText>
+    </div>
+    <div class="form-group m-3">
+        <label>Description:</label>
+        <InputText id="todo-description" @bind-Value="ToDoItem.Description"></InputText>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</EditForm>
+
+
+@code {
+    public ToDoItem ToDoItem = new ToDoItem();
+
+
+    private void Submit()
+    {
+
+        var a = 0;
+
+
+    }
+
+}
